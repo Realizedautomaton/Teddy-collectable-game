@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Collectables Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1 class="game-title">Teddy Collectables Game</h1>
+        <div id="player1-select" class="card-select">
+            <h2>Select your Teddy Collectable:</h2>
+            <div class="cards" id="player1-options"></div>
+        </div>
+        <button id="start-game" onclick="startGame()" disabled>Start Game</button>
+    </div>
+    <div id="player1-cards" class="cards"></div>
+    <div id="player2-cards" class="cards"></div>
+    <div id="game" style="display:none;">
+        <div id="player1" class="player">
+            <h2>Player 1</h2>
+            <div class="health-bar">
+                <div id="health1" class="health" style="width: 100%;"></div>
+            </div>
+            <p id="health1-text">100 HP</p>
+        </div>
+        <div id="player2" class="player">
+            <h2>Computer</h2>
+            <div class="health-bar">
+                <div id="health2" class="health" style="width: 100%;"></div>
+            </div>
+            <p id="health2-text">100 HP</p>
+        </div>
+        <div id="controls">
+            <button onclick="performAction('attack')">Attack</button>
+            <button onclick="performAction('defend')">Defend</button>
+            <button onclick="performAction('special')">Special Move</button>
+        </div>
+        <div id="messages"></div>
+        <div id="end-game" style="display:none;">
+            <h2 id="winner-message"></h2>
+        </div>
+    </div>
+    <button onclick="restartGame()">Restart Game</button>
+    <script src="script.js"></script>
+<!-- Audio Button -->
+<div id="audio-controls">
+    <audio id="background-audio" src="sounds/3. Teddy Collectables.mp3"></audio>
+    <button onclick="toggleAudio()">Play Music</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Set background to black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.game-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff; /* Set text color to white for contrast */
+}
+
+#player1-cards, #player2-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+}
+
+#player1-cards {
+    left: 20px;
+}
+
+#player2-cards {
+    right: 20px;
+}
+
+#game {
+    background-color: #333; /* Set a darker background color for the game area for better contrast */
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Adjust shadow for better visibility */
+    text-align: center;
+    margin-top: 100px; /* Adjust margin to fit the title */
+    color: #fff; /* Set text color to white inside the game area */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player {
+    margin-bottom: 20px;
+}
+
+.health-bar {
+    width: 400px;
+    background-color: #555; /* Darker background for health bar */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.health {
+    height: 20px;
+    background-color: #76c7c0;
+    border-radius: 5px;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+#controls button {
+    margin: 5px;
+    background-color: #444; /* Dark background for buttons */
+    color: #fff; /* White text on buttons */
+    border: none; /* No border on buttons */
+    padding: 10px 20px; /* Add some padding to buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#controls button:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+}
+
+.cards img {
+    width: 400px; /* Double the width */
+    height: 400px; /* Double the height */
+    margin: 20px; /* Increase the margin to match the new size */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-size: contain;
+}
+
+#start-screen {
+    text-align: center;
+}
+
+.card-select {
+    margin-bottom: 20px;
+}
+
+.card-select h2 {
+    color: #fff; /* Set text color to white for card selection instructions */
+}
+
+#start-game {
+    margin-top: 20px;
+    background-color: #444; /* Dark background for button */
+    color: #fff; /* White text on button */
+    border: none; /* No border on button */
+    padding: 10px 20px; /* Add some padding to button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#start-game:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+}
+
+#end-game {
+    text-align: center;
+}
+
+#end-game h2 {
+    color: #fff; /* Set text color to white for end game message */
+}
+
+button[onclick="restartGame()"] {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[onclick="restartGame()"]:hover {
+    background-color: #555;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #fff; }
+    50% { box-shadow: 0 0 20px #ff0; }
+    100% { box-shadow: 0 0 5px #fff; }
+}
+
+.attack {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+.special {
+    animation: glow 1s;
+    animation-iteration-count: 1;
+}
+
+#messages {
+    max-height: 200px; /* Adjust as needed */
+    overflow-y: auto;
+    width: 100%; /* Make sure it fits the container */
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #222; /* Darker background for messages */
+    color: #fff; /* White text for messages */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
+}
